@@ -1,0 +1,18 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightpink;
+}
+
+p {
+    color:darkblue;
+}
+
+h1 {
+    color:maroon;
+}
+
+#header {
+    background: rgb(235,125,250);
+    background: linear-gradient(90deg, rgba(235,125,250,1) 0%, rgba(255,255,255,1) 41%, rgba(209,8,203,1) 100%);
+    padding: 30px;   
+}
