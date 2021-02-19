@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, redirect, render_template
 import os, json
-import recommender
+#import recommender
 
 app = Flask(__name__)
 
