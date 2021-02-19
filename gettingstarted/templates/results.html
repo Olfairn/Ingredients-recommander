@@ -103,7 +103,16 @@ body {font-family: "Raleway", Arial, sans-serif}
         <label for="other">Surprise me! --> it might be a surprisingly good match, or not... </label>
     </div>
 
-    <button type="submit" class="w3-button w3-block w3-dark-grey">Let's find your next ingredients!</button>
+    
+    <b>Here are some ingredients that might go well with: {{ing_list_clean}} </b>   
+
+    <h4>- {{ing[0]}}</h4> 
+    <h4>- {{ing[1]}}</h4> 
+    <h4>- {{ing[2]}}</h4> 
+    <h4>- {{ing[3]}}</h4> 
+    <h4>- {{ing[4]}}</h4> 
+
+    <button type="submit" class="w3-button w3-block w3-dark-grey">Do you want to try with another match?</button>
   </form>
 
   <br>
