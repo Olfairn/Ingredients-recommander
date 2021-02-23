@@ -3,6 +3,7 @@ import os, json
 import pickle
 import numpy as np
 import random
+import zipfile
 #from . import recommender
 
 app = Flask(__name__)
@@ -52,7 +53,9 @@ if __name__ == "__main__":
     app.run(debug=True, port=5000)
     
 #Import model
-cs = np.load("cs.npy")
+archive = zipfile.ZipFile('cs.zip', 'r')
+cs_zip = archive.open('cs.npy')
+cs = np.load(cs_zip)
 
 # Import tfidf_vocabulary_
 with open('tfidf_vocabulary_.pickle','rb') as file:
