@@ -58,11 +58,11 @@ if __name__ == "__main__":
 #%%
 #Import model
 # Import tfidf_vocabulary_
-with open('./python-getting-started/gettingstarted/tfidf_vocabulary_.pickle','rb') as file:
+with open('./tfidf_vocabulary_.pickle','rb') as file:
     tfidf_vocabulary_ = pickle.load(file)
     
     
-archive = zipfile.ZipFile('./python-getting-started/gettingstarted/cs.zip', 'r')
+archive = zipfile.ZipFile('./cs.zip', 'r')
 cs_zip = archive.open('cs.npy')
 cs = np.load(cs_zip)
 
