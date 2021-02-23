@@ -57,7 +57,7 @@ if __name__ == "__main__":
     
 #%%
 #Import model
-archive = zipfile.ZipFile('static/cs.zip', 'r')
+archive = zipfile.ZipFile('cs.zip', 'r')
 cs_zip = archive.open('cs.npy')
 cs = np.load(cs_zip)
 
