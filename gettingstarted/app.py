@@ -1,3 +1,5 @@
+#%%
+
 from flask import Flask, jsonify, request, redirect, render_template
 import os, json
 import pickle
@@ -6,6 +8,7 @@ import random
 import zipfile
 #from . import recommender
 
+#%%
 app = Flask(__name__)
 app.secret_key = "secret key"
 
@@ -52,8 +55,9 @@ def search():
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
     
+#%%
 #Import model
-archive = zipfile.ZipFile('cs.zip', 'r')
+archive = zipfile.ZipFile('static/cs.zip', 'r')
 cs_zip = archive.open('cs.npy')
 cs = np.load(cs_zip)
 
@@ -110,3 +114,7 @@ def ingredient_recommender(ing_list, reco_type='best match'):
     return result, ing_list_clean
     
     
+
+# %%
+
+# %%
