@@ -57,13 +57,14 @@ if __name__ == "__main__":
     
 #%%
 #Import model
-archive = zipfile.ZipFile('cs.zip', 'r')
-cs_zip = archive.open('cs.npy')
-cs = np.load(cs_zip)
-
 # Import tfidf_vocabulary_
 with open('tfidf_vocabulary_.pickle','rb') as file:
     tfidf_vocabulary_ = pickle.load(file)
+    
+    
+archive = zipfile.ZipFile('cs.zip', 'r')
+cs_zip = archive.open('cs.npy')
+cs = np.load(cs_zip)
 
 #%%
 def ing_cs(ing_name):
