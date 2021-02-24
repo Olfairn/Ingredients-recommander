@@ -39,7 +39,7 @@ def search():
 	print ('term: ', term)
 	
 	SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
-	json_url = os.path.join(SITE_ROOT, "results.json")
+	json_url = os.path.join(SITE_ROOT, "/app/gettingstarted/results.json")
 	json_data = json.loads(open(json_url).read())
 	#print (json_data)
 	#print (json_data[0])
@@ -58,12 +58,11 @@ if __name__ == "__main__":
 #%%
 #Import model
 # Import tfidf_vocabulary_
-print(os.getcwd())
-with open('./tfidf_vocabulary_.pickle','rb') as file:
+with open('/app/gettingstarted/tfidf_vocabulary_.pickle','rb') as file:
     tfidf_vocabulary_ = pickle.load(file)
     
     
-archive = zipfile.ZipFile('./cs.zip', 'r')
+archive = zipfile.ZipFile('/app/gettingstarted/cs.zip', 'r')
 cs_zip = archive.open('cs.npy')
 cs = np.load(cs_zip)
 
