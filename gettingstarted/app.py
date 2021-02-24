@@ -58,6 +58,7 @@ if __name__ == "__main__":
 #%%
 #Import model
 # Import tfidf_vocabulary_
+print(os.getcwd())
 with open('./tfidf_vocabulary_.pickle','rb') as file:
     tfidf_vocabulary_ = pickle.load(file)
     
