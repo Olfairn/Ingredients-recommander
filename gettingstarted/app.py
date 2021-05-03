@@ -103,7 +103,7 @@ def ingredient_recommender(ing_list, reco_type='best match'):
         match = match[:5]
     elif reco_type == 'random_best':
         match = match[:10]
-        #match = random.sample(match,5)
+        match = random.sample(match,5)
     elif reco_type == 'surprise_me':
         match = match[10:25]
         match = random.sample(match,5)
