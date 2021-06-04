@@ -14,6 +14,12 @@ with open("/app/gettingstarted/results.json") as json_file:
 app = Flask(__name__)
 app.secret_key = "secret key"
 
+#%%
+    test_list = ["aa aa","b","a","c","bb_bb"]
+    for i in test_list:
+        print(i)
+        
+#%%
 
 @app.route('/ing') 
 def get_ing():
