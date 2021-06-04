@@ -12,9 +12,6 @@ body {font-family: "Raleway", Arial, sans-serif}
 <body>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" crossorigin="anonymous"></script>
-
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-content" style="max-width:1500px">
@@ -24,66 +21,33 @@ body {font-family: "Raleway", Arial, sans-serif}
     <a href="#" class="w3-left w3-button w3-white">INGREDIENTS RECOMMENDER</a>
   </header>
 
-  <!-- Photo Grid -->
-  <div class="w3-row">
-    <div class="w3-half">
-      <img src="/static/ing.jpg" style="width:90%">
-    </div>
-
-    <div class="w3-half">
-      <img src="/static/ing2.jpg" style="width:90%">
-    </div>
-  </div>
-
-
 <!-- End Page Content -->
 </div>
 
 <!-- Footer / About Section -->
 <footer class="w3-light-grey w3-padding-64 w3-center" id="about">
   <h2>How it works</h2>
-    <p>Wondering which ingredient could you add to your recipe to SPICED it up...? Welcome the ingredient recommender!</p>
+    <p>Wondering which ingredient could you add to your recipe to SPICED it up...? Welcome to the ingredient recommender!</p>
     <br>
     <label><b>Enter one or more ingredient to have suggested ingredients</b></label>
     <br>
     <br>
 
-    <script>
-        $(function() {
-            $(".searchBox").autocomplete({
-                source : function(request, response) {
-                    $.ajax({
-                        type: "POST",
-                        url : "http://localhost:5000/search",
-                        dataType : "json",
-                        cache: false,
-                        data : {
-                            q : request.term
-                        },
-                        success : function(data) {
-                            //alert(data);
-                            //console.log(data);
-                            response(data);
-                        },
-                        error: function(jqXHR, textStatus, errorThrown) {
-                            console.log(textStatus + " " + errorThrown);
-                        }
-                    });
-                },
-                minLength : 2
-            });
-        });
-    </script>
-    <body>
       <form action="/ing" method="GET">
             <p style="width: 560px; margin: auto;">
               
-                <label> </label>&nbsp;&nbsp;<input type="text" name="ing1" class="searchBox"/>
-                <label> </label>&nbsp;&nbsp;<input type="text" name="ing2" class="searchBox"/>
+                <input list="ing_list" name="ing1"/>
                 <br>
+                <input list="ing_list" name="ing2"/>
                 <br>
-                <label> </label>&nbsp;&nbsp;<input type="text" name="ing3" class="searchBox"/>
-                <label> </label>&nbsp;&nbsp;<input type="text" name="ing4" class="searchBox"/>
+                <input list="ing_list" name="ing3"/>
+                <br>
+                <input list="ing_list" name="ing4"/>
+                <datalist id="ing_list">
+                  {% for elem in short_ing_set %}
+                      <option value= {{elem}}>
+                  {% endfor %}
+                </datalist>
             </p>
         </div>
     </body> 
@@ -102,6 +66,14 @@ body {font-family: "Raleway", Arial, sans-serif}
         <input type="radio" id="surprise_me" name="reco_type" value="surprise_me">
         <label for="other">Surprise me! --> it might be a surprisingly good match, or not... </label>
     </div>
+
+    <button type="submit" class="w3-button w3-yellow">Let's find your next ingredients!</button>
+  </form>
+
+  <br>
+
+</footer>
+</body>
 
     
     <b>Here are some ingredients that might go well with: {{ing_list_clean}} </b>   

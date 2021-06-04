@@ -21,18 +21,6 @@ body {font-family: "Raleway", Arial, sans-serif}
     <a href="#" class="w3-left w3-button w3-white">INGREDIENTS RECOMMENDER</a>
   </header>
 
-  <!-- Photo Grid -->
-  <div class="w3-row">
-    <div class="w3-half">
-      <img src="/static/ing.jpg" style="width:90%">
-    </div>
-
-    <div class="w3-half">
-      <img src="/static/ing2.jpg" style="width:90%">
-    </div>
-  </div>
-
-
 <!-- End Page Content -->
 </div>
 
@@ -49,10 +37,11 @@ body {font-family: "Raleway", Arial, sans-serif}
             <p style="width: 560px; margin: auto;">
               
                 <input list="ing_list" name="ing1"/>
+                <br>
                 <input list="ing_list" name="ing2"/>
                 <br>
-                <br>
                 <input list="ing_list" name="ing3"/>
+                <br>
                 <input list="ing_list" name="ing4"/>
                 <datalist id="ing_list">
                   {% for elem in short_ing_set %}
