@@ -39,7 +39,7 @@ def search():
 	print ('term: ', term)
 	
 	SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
-	json_url = os.path.join(SITE_ROOT, "results.json")
+	json_url = os.path.join("/app/gettingstarted/results.json")
 	json_data = json.loads(open(json_url).read())
 	#print (json_data)
 	#print (json_data[0])
