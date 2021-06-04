@@ -12,9 +12,6 @@ body {font-family: "Raleway", Arial, sans-serif}
 <body>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" crossorigin="anonymous"></script>
-
 
 <!-- !PAGE CONTENT! -->
 <div class="w3-content" style="max-width:1500px">
@@ -42,7 +39,7 @@ body {font-family: "Raleway", Arial, sans-serif}
 <!-- Footer / About Section -->
 <footer class="w3-light-grey w3-padding-64 w3-center" id="about">
   <h2>How it works</h2>
-    <p>Wondering which ingredient could you add to your recipe to SPICED it up...? Welcome the ingredient recommender!</p>
+    <p>Wondering which ingredient could you add to your recipe to SPICED it up...? Welcome to the ingredient recommender!</p>
     <br>
     <label><b>Enter one or more ingredient to have suggested ingredients</b></label>
     <br>
@@ -62,43 +59,35 @@ body {font-family: "Raleway", Arial, sans-serif}
       
       </body>
 
-
-    <script>
-        $(function() {
-            $(".searchBox").autocomplete({
-                source : function(request, response) {
-                    $.ajax({
-                        type: "POST",
-                        url : "http://https://ing-reco.herokuapp.com/search",
-                        dataType : "json",
-                        cache: false,
-                        data : {
-                            q : request.term
-                        },
-                        success : function(data) {
-                            //alert(data);
-                            //console.log(data);
-                            response(data);
-                        },
-                        error: function(jqXHR, textStatus, errorThrown) {
-                            console.log(textStatus + " " + errorThrown);
-                        }
-                    });
-                },
-                minLength : 2
-            });
-        });
-    </script>
-    <body>
       <form action="/ing" method="GET">
             <p style="width: 560px; margin: auto;">
               
                 <label> </label>&nbsp;&nbsp;<input type="text" name="ing1" class="searchBox"/>
+                <datalist id="hschools">
+                  {% for elem in short_ing_set %}
+                      <option value= {{elem}}>
+                  {% endfor %}
+                </datalist>
                 <label> </label>&nbsp;&nbsp;<input type="text" name="ing2" class="searchBox"/>
+                <datalist id="hschools">
+                  {% for elem in short_ing_set %}
+                      <option value= {{elem}}>
+                  {% endfor %}
+                </datalist>
                 <br>
                 <br>
                 <label> </label>&nbsp;&nbsp;<input type="text" name="ing3" class="searchBox"/>
+                <datalist id="hschools">
+                  {% for elem in short_ing_set %}
+                      <option value= {{elem}}>
+                  {% endfor %}
+                </datalist>
                 <label> </label>&nbsp;&nbsp;<input type="text" name="ing4" class="searchBox"/>
+                <datalist id="hschools">
+                  {% for elem in short_ing_set %}
+                      <option value= {{elem}}>
+                  {% endfor %}
+                </datalist>
             </p>
         </div>
     </body> 

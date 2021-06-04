@@ -41,25 +41,6 @@ def get_ing():
 def hello():
     return render_template('main_template.html', short_ing_set=short_ing_set)
 
-@app.route('/search', methods=['POST'])
-def search():
-	term = request.form['q']
-	print ('term: ', term)
-	
-	SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
-	json_url = os.path.join("/app/gettingstarted/results.json")
-	json_data = json.loads(open(json_url).read())
-	#print (json_data)
-	#print (json_data[0])
-	
-	filtered_dict = [v for v in json_data if term in v]	
-	#print(filtered_dict)
-	
-	resp = jsonify(filtered_dict)
-	resp.status_code = 200
-	return resp
-
-
 if __name__ == "__main__":
     app.run()
     
