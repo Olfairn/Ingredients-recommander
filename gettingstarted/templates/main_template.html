@@ -62,8 +62,8 @@ body {font-family: "Raleway", Arial, sans-serif}
       <form action="/ing" method="GET">
             <p style="width: 560px; margin: auto;">
               
-                <label> </label>&nbsp;&nbsp;<input list="ing1" name="ing1"/>
-                <datalist id="hschools">
+                <input list="ing_list" name="ing1"/>
+                <datalist id="ing_list">
                   {% for elem in short_ing_set %}
                       <option value= {{elem}}>
                   {% endfor %}
@@ -107,7 +107,7 @@ body {font-family: "Raleway", Arial, sans-serif}
         <label for="other">Surprise me! --> it might be a surprisingly good match, or not... </label>
     </div>
 
-    <button type="submit" class="w3-button w3-red">Let's find your next ingredients!</button>
+    <button type="submit" class="w3-button w3-yellow">Let's find your next ingredients!</button>
   </form>
 
   <br>

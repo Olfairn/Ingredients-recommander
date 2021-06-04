@@ -69,7 +69,7 @@ def ingredient_recommender(ing_list, reco_type='best match'):
     ing_list_clean = [x for x in ing_list if x in tfidf_vocabulary_]
     ing_list_clean = list(filter(None,ing_list_clean))
     if not ing_list_clean:
-        ing_list_clean = random.sample([*tfidf_vocabulary_],1)
+        ing_list_clean = random.sample([*tfidf_vocabulary_],1) #If not ingredient is found, return a random one
     inv_map = {v: k for k, v in tfidf_vocabulary_.items()}
     ing_index_list = [0,4300,5370,3671,497] #!Bad idea if things move 0 = secret ingredient / 4066 = salt / 3473 = pepper / 470 = black pepper / 5370  = water
     ing_cs_list = []
