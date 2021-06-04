@@ -45,46 +45,16 @@ body {font-family: "Raleway", Arial, sans-serif}
     <br>
     <br>
 
-    <body>
-
-      <form>
-        <input list="hschools" name="hschool">
-        <datalist id="hschools">
-          {% for elem in short_ing_set %}
-              <option value= {{elem}}>
-          {% endfor %}
-        </datalist>
-        <input type="submit">
-      </form>
-      
-      </body>
-
       <form action="/ing" method="GET">
             <p style="width: 560px; margin: auto;">
               
                 <input list="ing_list" name="ing1"/>
                 <input list="ing_list" name="ing2"/>
+                <br>
+                <br>
+                <input list="ing_list" name="ing3"/>
+                <input list="ing_list" name="ing4"/>
                 <datalist id="ing_list">
-                  {% for elem in short_ing_set %}
-                      <option value= {{elem}}>
-                  {% endfor %}
-                </datalist>
-                <label> </label>&nbsp;&nbsp;<input type="text" name="ing2" />
-                <datalist id="hschools">
-                  {% for elem in short_ing_set %}
-                      <option value= {{elem}}>
-                  {% endfor %}
-                </datalist>
-                <br>
-                <br>
-                <label> </label>&nbsp;&nbsp;<input type="text" name="ing3"/>
-                <datalist id="hschools">
-                  {% for elem in short_ing_set %}
-                      <option value= {{elem}}>
-                  {% endfor %}
-                </datalist>
-                <label> </label>&nbsp;&nbsp;<input type="text" name="ing4"/>
-                <datalist id="hschools">
                   {% for elem in short_ing_set %}
                       <option value= {{elem}}>
                   {% endfor %}
