@@ -53,8 +53,7 @@ body {font-family: "Raleway", Arial, sans-serif}
       <form>
         <input list="hschools" name="hschool">
         <datalist id="hschools">
-          {% for elem in test_list
-            print(elem) %}
+          {% for elem in short_ing_list %}
               <option value= {{elem}}>
           {% endfor %}
         </datalist>

@@ -11,15 +11,14 @@ import zipfile
 with open("/app/gettingstarted/results.json") as json_file:
     ing_list_autocomplete = json.load(json_file)
 
+    short_ing_list = []
+    for i in ing_list_autocomplete:
+        first_word = i.split()[0]
+        short_ing_list.append(first_word)
+
 app = Flask(__name__)
 app.secret_key = "secret key"
 
-#%%
-    test_list = ["aa aa","b","a","c","bb_bb"]
-    for i in test_list:
-        print(i)
-        
-#%%
 
 @app.route('/ing') 
 def get_ing():
@@ -39,8 +38,7 @@ def get_ing():
 
 @app.route('/')
 def hello():
-    test_list = ["aa aa","b","a","c","bb_bb"]
-    return render_template('main_template.html', test_list=test_list)
+    return render_template('main_template.html', short_ing_list=short_ing_list)
 
 @app.route('/search', methods=['POST'])
 def search():
