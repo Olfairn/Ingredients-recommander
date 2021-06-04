@@ -62,13 +62,13 @@ body {font-family: "Raleway", Arial, sans-serif}
       <form action="/ing" method="GET">
             <p style="width: 560px; margin: auto;">
               
-                <label> </label>&nbsp;&nbsp;<input type="text" name="ing1" class="searchBox"/>
+                <label> </label>&nbsp;&nbsp;<input list="ing1" name="ing1"/>
                 <datalist id="hschools">
                   {% for elem in short_ing_set %}
                       <option value= {{elem}}>
                   {% endfor %}
                 </datalist>
-                <label> </label>&nbsp;&nbsp;<input type="text" name="ing2" class="searchBox"/>
+                <label> </label>&nbsp;&nbsp;<input type="text" name="ing2" />
                 <datalist id="hschools">
                   {% for elem in short_ing_set %}
                       <option value= {{elem}}>
@@ -76,13 +76,13 @@ body {font-family: "Raleway", Arial, sans-serif}
                 </datalist>
                 <br>
                 <br>
-                <label> </label>&nbsp;&nbsp;<input type="text" name="ing3" class="searchBox"/>
+                <label> </label>&nbsp;&nbsp;<input type="text" name="ing3"/>
                 <datalist id="hschools">
                   {% for elem in short_ing_set %}
                       <option value= {{elem}}>
                   {% endfor %}
                 </datalist>
-                <label> </label>&nbsp;&nbsp;<input type="text" name="ing4" class="searchBox"/>
+                <label> </label>&nbsp;&nbsp;<input type="text" name="ing4"/>
                 <datalist id="hschools">
                   {% for elem in short_ing_set %}
                       <option value= {{elem}}>
@@ -107,7 +107,7 @@ body {font-family: "Raleway", Arial, sans-serif}
         <label for="other">Surprise me! --> it might be a surprisingly good match, or not... </label>
     </div>
 
-    <button type="submit" class="w3-button w3-block w3-dark-grey">Let's find your next ingredients!</button>
+    <button type="submit" class="w3-button w3-red">Let's find your next ingredients!</button>
   </form>
 
   <br>
