@@ -25,22 +25,72 @@ body {font-family: "Raleway", Arial, sans-serif}
 </body>
 
     
-    <b>Here are some ingredients that might go well with: {{ing_list_clean}} </b>   
 
-    <h4>- {{ing[0]}}</h4> 
-    <h4>- {{ing[1]}}</h4> 
-    <h4>- {{ing[2]}}</h4> 
-    <h4>- {{ing[3]}}</h4> 
-    <h4>- {{ing[4]}}</h4> 
-
-    <button type="submit" class="w3-button w3-block w3-dark-grey">Do you want to try with another match?</button>
-  </form>
-
-  <br>
 
 </footer>
 </body>
 </html>
+
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style>
+      @media (max-width: 767px) {
+        .hidden-mobile {
+          display: none;
+        }
+      }
+    </style>
+<title>INGREDIENTS RECOMMENDER</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+<style>
+body {font-family: "Raleway", Arial, sans-serif}
+.w3-row img {margin-bottom: -8px}
+</style>
+<body>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+
+  <!-- Header -->
+  <header class="w3-container w3-xlarge w3-padding-24">
+    <a href="#" class="w3-left w3-button w3-white">INGREDIENTS RECOMMENDER</a>
+  </header>
+
+  <!-- Photo Grid -->
+<div class="hidden-mobile">
+  <div class="w3-row">
+    <div class="w3-half">
+      <img src="/static/ing.jpg" style="width:90%">
+
+    <div class="w3-row">
+    <div class="w3-half">
+      <img src="/static/ing2.jpg" style="width:90%">
+    </div>
+  </div>
+</div>
+
+<!-- End Page Content -->
+</div>
+
+<b>Here are some ingredients that might go well with: {{ing_list_clean}} </b>   
+
+<h4>- {{ing[0]}}</h4> 
+<h4>- {{ing[1]}}</h4> 
+<h4>- {{ing[2]}}</h4> 
+<h4>- {{ing[3]}}</h4> 
+<h4>- {{ing[4]}}</h4> 
+
+<br>
 
 <!-- Footer / About Section -->
 <footer class="w3-light-grey w3-padding-64 w3-center" id="about">
@@ -52,7 +102,6 @@ body {font-family: "Raleway", Arial, sans-serif}
     <br>
 
       <form action="/ing" method="GET">
-            <p style="width: 560px; margin: auto;">
               
                 <input list="ing_list" name="ing1"/>
                 <br>
@@ -90,5 +139,7 @@ body {font-family: "Raleway", Arial, sans-serif}
 
   <br>
 
-
+</footer>
+</body>
+</html>
 
