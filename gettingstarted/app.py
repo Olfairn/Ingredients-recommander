@@ -8,7 +8,9 @@ import random
 import zipfile
 #from . import recommender
 
-#%%
+with open("/app/gettingstarted/results.json") as json_file:
+    ing_list_autocomplete = json.load(json_file)
+
 app = Flask(__name__)
 app.secret_key = "secret key"
 
@@ -31,8 +33,8 @@ def get_ing():
 
 @app.route('/')
 def hello():
-    hsch=["a","b","c"]
-    return render_template('main_template.html', hsch=hsch)
+
+    return render_template('main_template.html', ing_list_autocomplete=ing_list_autocomplete)
 
 @app.route('/search', methods=['POST'])
 def search():
