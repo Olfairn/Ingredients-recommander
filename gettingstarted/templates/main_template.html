@@ -48,6 +48,21 @@ body {font-family: "Raleway", Arial, sans-serif}
     <br>
     <br>
 
+    <body>
+
+      <form>
+        <input list="hschools" name="hschool">
+        <datalist id="hschools">
+          {% for elem in hsch %}
+              <option value= {{elem}}>
+          {% endfor %}
+        </datalist>
+        <input type="submit">
+      </form>
+      
+      </body>
+
+      
     <script>
         $(function() {
             $(".searchBox").autocomplete({

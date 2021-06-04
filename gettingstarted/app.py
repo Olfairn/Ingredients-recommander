@@ -31,7 +31,8 @@ def get_ing():
 
 @app.route('/')
 def hello():
-    return render_template('main_template.html')
+    hsch=["a","b","c"]
+    return render_template('main_template.html', hsch=hsch)
 
 @app.route('/search', methods=['POST'])
 def search():
