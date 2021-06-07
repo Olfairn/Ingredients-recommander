@@ -46,52 +46,57 @@ body {font-family: "Raleway", Arial, sans-serif}
 
 <!-- Footer / About Section -->
 <footer class="w3-light-grey w3-padding-64 w3-center" id="about">
-  <h2>Not satisfy with the results? </h2>
+  <h2>How it works</h2>
+    <p>Wondering which ingredient could you add to your recipe to SPICED it up...? Welcome to the ingredient recommender!</p>
     <br>
-    <label><b>Try again with a different feeling, or enter new ingredients!</b></label>
+    <label><b>Enter one or more ingredient to have suggested ingredients</b></label>
     <br>
     <br>
-    <form action="/ing" method="GET">
+
+      <form action="/ing" method="GET">
               
-      <input list="ing_list" name="ing1"/>
-      <br>
-      <br>
-      <input list="ing_list" name="ing2"/>
-      <br>
-      <br>
-      <input list="ing_list" name="ing3"/>
-      <br>
-      <br>
-      <input list="ing_list" name="ing4"/>
-      <datalist id="ing_list">
-        {% for elem in short_ing_set %}
-            <option value= "{{elem}}"></option>
-        {% endfor %}
-      </datalist>
-  </p>
-</div>
-</body> 
+                <input list="ing_list" name="ing1"/>
+                <br>
+                <br>
+                <input list="ing_list" name="ing2"/>
+                <br>
+                <br>
+                <input list="ing_list" name="ing3"/>
+                <br>
+                <br>
+                <input list="ing_list" name="ing4"/>
+                <datalist id="ing_list">
+                  {% for elem in short_ing_set %}
+                      <option value= "{{elem}}"></option>
+                  {% endfor %}
+                </datalist>
+            </p>
+        </div>
+    </body> 
 
-<br>
-<div class="w3-section"> 
-<label><b>How are you feeling today?</b></label>
-<br>
-<br>
-<input type="radio" id="best_match" name="reco_type" value="best_match" checked> 
-<label for="male">Give me the best 5 matches!</label>
-<br>
-<input type="radio" id="random_best" name="reco_type" value="random_best">
-<label for="female">Give me a couple of good matches!</label>
-<br>
-<input type="radio" id="surprise_me" name="reco_type" value="surprise_me">
-<label for="other">Surprise me! --> it might be a surprisingly good match, or not... </label>
-</div>
+    <br>
+    <div class="w3-section"> 
+      <label><b>How are you feeling today?</b></label>
+      <br>
+      <br>
+        <input type="radio" id="best_match" name="reco_type" value="best_match" checked> 
+        <label for="male">Give me the best 5 matches!</label>
+        <br>
+        <input type="radio" id="random_best" name="reco_type" value="random_best">
+        <label for="female">Give me a couple of good matches!</label>
+        <br>
+        <input type="radio" id="surprise_me" name="reco_type" value="surprise_me">
+        <label for="other">Surprise me! --> it might be a surprisingly good match, or not... </label>
+    </div>
 
-<button type="submit" class="w3-button w3-yellow">Let's find your next ingredients!</button>
-</form>
+    <button type="submit" class="w3-button w3-yellow">Let's find your next ingredients!</button>
+  </form>
 
-<br>
+  <br>
 
 </footer>
 </body>
 </html>
+
+
+
