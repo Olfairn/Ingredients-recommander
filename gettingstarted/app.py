@@ -11,7 +11,7 @@ import zipfile
 app = Flask(__name__)
 app.secret_key = "secret key"
 #/app/gettingstarted/
-with open("results.json") as json_file:
+with open("/app/gettingstarted/results.json") as json_file:
     ing_list_autocomplete = json.load(json_file)
 
     short_ing_set = set()
