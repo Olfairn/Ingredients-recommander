@@ -57,7 +57,24 @@ body {font-family: "Raleway", Arial, sans-serif}
 
       <form action="/ing" method="GET">
               
-                <input value={{list_ing}}/>
+                <input list="ing_list" name="ing1" value={{name1}}/>
+                <br>
+                <br>
+                <input list="ing_list" name="ing2"/>
+                <br>
+                <br>
+                <input list="ing_list" name="ing3"/>
+                <br>
+                <br>
+                <input list="ing_list" name="ing4"/>
+                <datalist id="ing_list">
+                  {% for elem in short_ing_set %}
+                      <option value= {{elem}}>
+                  {% endfor %}
+                </datalist>
+            </p>
+        </div>
+    </body> 
 
     <br>
     <div class="w3-section"> 

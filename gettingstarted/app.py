@@ -36,24 +36,10 @@ def get_ing():
                            ing=ing,
                            ing_list_clean=ing_list_clean, 
                            title='your recommendations:',
-                           list_ing=list_ing)
+                           list_ing=list_ing,
+                           name1=name1)
     
 
-@app.route('/redo') 
-def get_ing():
-    d = dict(request.args)
-    name1r = name1
-    name2r = d['ing2']
-    name3r = d['ing3']
-    name4r = d['ing4']
-    reco_type = d['reco_type']
-  #  dict_name_rating = {name1:rating1,name2:rating2}
-    list_ing = [name1r,name2r,name3r,name4r ]
-    ing,ing_list_clean = ingredient_recommender(list_ing,reco_type)
-    return render_template('results.html', 
-                           ing=ing,
-                           ing_list_clean=ing_list_clean, 
-                           title='your recommendations:')
 
 @app.route('/')
 def hello():
