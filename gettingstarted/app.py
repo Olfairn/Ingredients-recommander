@@ -37,7 +37,10 @@ def get_ing():
                            ing_list_clean=ing_list_clean, 
                            title='your recommendations:',
                            list_ing=list_ing,
-                           name1=name1)
+                           name1=name1,
+                           name2=name2,
+                           name3=name3,
+                           name4=name4)
     
 
 
