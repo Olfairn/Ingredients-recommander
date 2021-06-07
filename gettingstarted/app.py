@@ -1,5 +1,3 @@
-#%%
-
 from flask import Flask, jsonify, request, redirect, render_template
 import os, json
 import pickle
@@ -69,7 +67,6 @@ def ing_cs(ing_name):
     return ing_cs1
 
 #TODO: Find a way to flatten the cosine if too big (The ingredient with a big cosine takes the lead) --> geometrics means
-#TODO2: Make it nicer
 #TODO3: Put inv_map and Cs inside function
 
 def ingredient_recommender(ing_list, reco_type='best match'):
