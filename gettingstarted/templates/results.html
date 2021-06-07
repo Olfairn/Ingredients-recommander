@@ -30,16 +30,18 @@ body {font-family: "Raleway", Arial, sans-serif}
     <a href="#" class="w3-left w3-button w3-white">INGREDIENTS RECOMMENDER</a>
   </header>
 
-</div>
-<header class="w3-container w3-xlarge w3-padding-24">
-  <b>Here are some ingredients that might go well with: {{ing_list_clean}} </b>   
+  <!-- Photo Grid -->
+<div class="hidden-mobile">
+  <div class="w3-row">
+    <div class="w3-half">
+      <img src="/static/ing.jpg" style="width:90%">
+    </div>
 
-  <h4>- {{ing[0]}}</h4> 
-  <h4>- {{ing[1]}}</h4> 
-  <h4>- {{ing[2]}}</h4> 
-  <h4>- {{ing[3]}}</h4> 
-  <h4>- {{ing[4]}}</h4> 
-</header>
+    <div class="w3-half">
+      <img src="/static/ing2.jpg" style="width:90%">
+    </div>
+  </div>
+</div>
 
 <!-- End Page Content -->
 </div>
@@ -97,6 +99,4 @@ body {font-family: "Raleway", Arial, sans-serif}
 </footer>
 </body>
 </html>
-
-
 
