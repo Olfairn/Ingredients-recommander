@@ -49,7 +49,7 @@ def hello():
     return render_template('main_template.html', short_ing_set=short_ing_set)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=Ture, port=5000)
     
 #%%
 #Import model
