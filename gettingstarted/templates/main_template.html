@@ -68,7 +68,7 @@ body {font-family: "Raleway", Arial, sans-serif}
                 <br>
                 <input list="ing_list" name="ing4"/>
                 <datalist id="ing_list">
-                  {% for elem in short_ing_set %}
+                  {% for elem in ing_list_autocomplete %}
                       <option value= "{{elem}}"></option>
                   {% endfor %}
                 </datalist>

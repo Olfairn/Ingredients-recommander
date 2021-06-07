@@ -40,13 +40,14 @@ def get_ing():
                            name2=name2,
                            name3=name3,
                            name4=name4,
-                           short_ing_set=short_ing_set)
+                           short_ing_set=short_ing_set,
+                           ing_list_autocomplete=ing_list_autocomplete)
     
 
 
 @app.route('/')
 def hello():
-    return render_template('main_template.html', short_ing_set=short_ing_set)
+    return render_template('main_template.html', short_ing_set=short_ing_set, ing_list_autocomplete=ing_list_autocomplete)
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
