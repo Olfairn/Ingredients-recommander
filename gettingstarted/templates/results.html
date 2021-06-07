@@ -30,32 +30,44 @@ body {font-family: "Raleway", Arial, sans-serif}
     <a href="#" class="w3-left w3-button w3-white">INGREDIENTS RECOMMENDER</a>
   </header>
 
-  <!-- Photo Grid -->
-<div class="hidden-mobile">
-  <div class="w3-row">
-    <div class="w3-half">
-      <img src="/static/ing.jpg" style="width:90%">
-    </div>
-
-    <div class="w3-half">
-      <img src="/static/ing2.jpg" style="width:90%">
-    </div>
-  </div>
 </div>
+
+<b>Here are some ingredients that might go well with: {{ing_list_clean}} </b>   
+
+<h4>- {{ing[0]}}</h4> 
+<h4>- {{ing[1]}}</h4> 
+<h4>- {{ing[2]}}</h4> 
+<h4>- {{ing[3]}}</h4> 
+<h4>- {{ing[4]}}</h4> 
+
 
 <!-- End Page Content -->
 </div>
 
 <!-- Footer / About Section -->
 <footer class="w3-light-grey w3-padding-64 w3-center" id="about">
-  <h2>How it works</h2>
-    <p>Wondering which ingredient could you add to your recipe to SPICED it up...? Welcome to the ingredient recommender!</p>
+  <h2>Not satisfy with the results? </h2>
     <br>
-    <label><b>Enter one or more ingredient to have suggested ingredients</b></label>
+    <label><b>Try again with a different feeling, with enter new ingredients!</b></label>
     <br>
     <br>
 
       <form action="/ing" method="GET">
+        <div class="w3-section"> 
+          <label><b>How are you feeling today?</b></label>
+          <br>
+          <br>
+            <input type="radio" id="best_match" name="reco_type" value="best_match" checked> 
+            <label for="male">Give me the best 5 matches!</label>
+            <br>
+            <input type="radio" id="random_best" name="reco_type" value="random_best">
+            <label for="female">Give me a couple of good matches!</label>
+            <br>
+            <input type="radio" id="surprise_me" name="reco_type" value="surprise_me">
+            <label for="other">Surprise me! --> it might be a surprisingly good match, or not... </label>
+        </div>
+
+        <br>
               
                 <input list="ing_list" name="ing1" value={{name1}}>
                 <br>
@@ -76,37 +88,10 @@ body {font-family: "Raleway", Arial, sans-serif}
         </div>
     </body> 
 
-    <br>
-    <div class="w3-section"> 
-      <label><b>How are you feeling today?</b></label>
-      <br>
-      <br>
-        <input type="radio" id="best_match" name="reco_type" value="best_match" checked> 
-        <label for="male">Give me the best 5 matches!</label>
-        <br>
-        <input type="radio" id="random_best" name="reco_type" value="random_best">
-        <label for="female">Give me a couple of good matches!</label>
-        <br>
-        <input type="radio" id="surprise_me" name="reco_type" value="surprise_me">
-        <label for="other">Surprise me! --> it might be a surprisingly good match, or not... </label>
-    </div>
-
     <button type="submit" class="w3-button w3-yellow">Let's find your next ingredients!</button>
   </form>
 
   <br>
-
-
-<!-- End Page Content -->
-</div>
-
-<b>Here are some ingredients that might go well with: {{ing_list_clean}} </b>   
-
-<h4>- {{ing[0]}}</h4> 
-<h4>- {{ing[1]}}</h4> 
-<h4>- {{ing[2]}}</h4> 
-<h4>- {{ing[3]}}</h4> 
-<h4>- {{ing[4]}}</h4> 
 
 </footer>
 </body>
