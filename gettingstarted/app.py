@@ -10,8 +10,8 @@ import zipfile
 
 app = Flask(__name__)
 app.secret_key = "secret key"
-
-with open("/app/gettingstarted/results.json") as json_file:
+#/app/gettingstarted/
+with open("results.json") as json_file:
     ing_list_autocomplete = json.load(json_file)
 
     short_ing_set = set()
@@ -48,7 +48,7 @@ def hello():
     return render_template('main_template.html', short_ing_set=short_ing_set)
 
 if __name__ == "__main__":
-    app.run(debug=Trueex, port=5000)
+    app.run(debug=True, port=5000)
     
 
 #Import model
