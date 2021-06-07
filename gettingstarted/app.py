@@ -8,6 +8,8 @@ import random
 import zipfile
 #from . import recommender
 
+app = Flask(__name__)
+app.secret_key = "secret key"
 
 with open("/app/gettingstarted/results.json") as json_file:
     ing_list_autocomplete = json.load(json_file)
@@ -16,9 +18,6 @@ with open("/app/gettingstarted/results.json") as json_file:
     for i in ing_list_autocomplete:
         first_word = i.split()[0]
         short_ing_set.add(first_word)
-
-app = Flask(__name__)
-app.secret_key = "secret key"
 
 
 @app.route('/ing') 
@@ -49,9 +48,9 @@ def hello():
     return render_template('main_template.html', short_ing_set=short_ing_set)
 
 if __name__ == "__main__":
-    app.run(debug=Ture, port=5000)
+    app.run(debug=Trueex, port=5000)
     
-#%%
+
 #Import model
 # Import tfidf_vocabulary_
 with open('/app/gettingstarted/tfidf_vocabulary_.pickle','rb') as file:
@@ -62,7 +61,6 @@ archive = zipfile.ZipFile('/app/gettingstarted/cs.zip', 'r')
 cs_zip = archive.open('cs.npy')
 cs = np.load(cs_zip)
 
-#%%
 def ing_cs(ing_name):
     ing_index1 = tfidf_vocabulary_[ing_name]
     ing_cs1 = cs[ing_index1] #cs is outside the function
@@ -111,7 +109,3 @@ def ingredient_recommender(ing_list, reco_type='best match'):
     return result, ing_list_clean
     
     
-
-# %%
-
-# %%
