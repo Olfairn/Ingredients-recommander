@@ -4,19 +4,22 @@ import pickle
 import numpy as np
 import random
 import zipfile
-#from . import recommender
+
+# Import tfidf_vocabulary_
+with open('/app/gettingstarted/data/tfidf_vocabulary_.pickle','rb') as file:
+    tfidf_vocabulary_ = pickle.load(file)
+
+#Import model  
+archive = zipfile.ZipFile('/app/gettingstarted/data/cs_model.zip', 'r')
+cs_zip = archive.open('cs.npy')
+cs = np.load(cs_zip)
+
+#Import ingredients list
+with open("/app/gettingstarted/data/list_ingredients.json") as json_file:
+    ing_list_autocomplete = json.load(json_file)
 
 app = Flask(__name__)
 app.secret_key = "secret key"
-#/app/gettingstarted/
-with open("/app/gettingstarted/results.json") as json_file:
-    ing_list_autocomplete = json.load(json_file)
-
-    short_ing_set = set()
-    for i in ing_list_autocomplete:
-        first_word = i.split()[0]
-        short_ing_set.add(first_word)
-
 
 @app.route('/ing') 
 def get_ing():
@@ -26,7 +29,6 @@ def get_ing():
     name3 = d['ing3']
     name4 = d['ing4']
     reco_type = d['reco_type']
-  #  dict_name_rating = {name1:rating1,name2:rating2}
     list_ing = [name1,name2,name3,name4]
     ing,ing_list_clean = ingredient_recommender(list_ing,reco_type)
     return render_template('results.html', 
@@ -38,36 +40,23 @@ def get_ing():
                            name2=name2,
                            name3=name3,
                            name4=name4,
-                           short_ing_set=short_ing_set,
                            ing_list_autocomplete=ing_list_autocomplete)
     
 
 
 @app.route('/')
 def hello():
-    return render_template('main_template.html', short_ing_set=short_ing_set, ing_list_autocomplete=ing_list_autocomplete)
+    return render_template('main_template.html', ing_list_autocomplete=ing_list_autocomplete)
 
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
-    
 
-#Import model
-# Import tfidf_vocabulary_
-with open('/app/gettingstarted/tfidf_vocabulary_.pickle','rb') as file:
-    tfidf_vocabulary_ = pickle.load(file)
-    
-    
-archive = zipfile.ZipFile('/app/gettingstarted/cs.zip', 'r')
-cs_zip = archive.open('cs.npy')
-cs = np.load(cs_zip)
+#TODO: Find a way to flatten the cosine if too big (The ingredient with a big cosine takes the lead) --> geometrics means
 
 def ing_cs(ing_name):
     ing_index1 = tfidf_vocabulary_[ing_name]
     ing_cs1 = cs[ing_index1] #cs is outside the function
     return ing_cs1
-
-#TODO: Find a way to flatten the cosine if too big (The ingredient with a big cosine takes the lead) --> geometrics means
-#TODO3: Put inv_map and Cs inside function
 
 def ingredient_recommender(ing_list, reco_type='best match'):
     ing_list_clean = [x for x in ing_list if x in tfidf_vocabulary_]
@@ -106,5 +95,3 @@ def ingredient_recommender(ing_list, reco_type='best match'):
     for ing in match: 
         result.append(inv_map[ing])
     return result, ing_list_clean
-    
-    
